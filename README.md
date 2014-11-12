@@ -8,6 +8,7 @@ This code requires the proper Lua libraires, most easily met by using the lua ed
 Versions
 ========
 0.7.3 - Uploaded to Guthub
+
 0.7.5 - Various tweaks and feature additions
 -Fixed text on coin
 -Added comments through code to make modification easier
