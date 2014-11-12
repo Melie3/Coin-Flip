@@ -1,6 +1,6 @@
 --Coin Flip was originally made by Adam9812. It is Public Domain.
 
---Coin Flip 0.7.5
+--Coin Flip 0.8.0
 
 function setup()
     
@@ -10,14 +10,15 @@ function setup()
     headsAmount = 0
     tailsAmount = 0
     
-    flip()
-    
     parameter.action("Flip Coin",flip)
+    parameter.integer("flipPoint",-30,31,0)
     
     parameter.watch("flipNumber")
     parameter.watch("flipAmount")
     parameter.watch("headsAmount")
     parameter.watch("tailsAmount")
+    
+    flip()
     
 end
 
@@ -25,7 +26,7 @@ function draw()
     
     --Sets color
     
-    background(40, 40, 50)
+    background(33, 34, 43, 255)
     stroke(167, 37, 23, 255)
     fill(153, 77, 44, 255)
     
@@ -44,7 +45,7 @@ function draw()
     
     --Sets text
     
-    if flipNumber == 1 then
+    if flipNumber > flipPoint then
         text("Heads",WIDTH/2,HEIGHT/2)
         else
         text("Tails",WIDTH/2,HEIGHT/2)
@@ -61,11 +62,11 @@ function flip()
     
     --Generates Coin flipping
     
-    flipNumber = math.random(1,2)
+    flipNumber = math.random(-30,31)
     flipAmount = flipAmount + 1
     
     
-    if flipNumber == 1 then
+    if flipNumber > flipPoint then
         headsAmount = headsAmount + 1
         
         else
@@ -73,4 +74,20 @@ function flip()
         tailsAmount = tailsAmount + 1
         
     end
+end
+
+function cheatCheck()
+    
+    --Checks if user is cheating
+    
+    if flipPoint ~= 0 then
+        
+        print("THIS USER IS CHEATING")
+        
+        else
+        
+       print("THIS USER IS NOT CHEATING")
+        
+    end
+    
 end
