@@ -1,6 +1,6 @@
 --Coin Flip was originally made by Adam9812. It is Public Domain.
 
---Coin Flip 0.7.2
+--Coin Flip 0.7.3
 
 function setup()
     
@@ -26,12 +26,13 @@ function draw()
     
     ellipse(WIDTH/2,HEIGHT/2,141)
     
-    fill(0, 0, 0, 255)
+    fill(1, 1, 1, 255)
+    fontSize(21)
     
     if flipNumber == 1 then
-        text("Heads")
+        text("Heads",WIDTH/2,HEIGHT/2)
         else
-        text("Tails")
+        text("Tails",WIDTH/2,HEIGHT/2)
         
     end
     
@@ -45,6 +46,7 @@ function flip()
     
     flipNumber = math.random(1,2)
     flipAmount = flipAmount + 1
+    
     
     if flipNumber == 1 then
         headsAmount = headsAmount + 1
