@@ -1,6 +1,6 @@
 --Coin Flip was originally made by Adam9812. It is Public Domain.
 
---Coin Flip 0.8.1
+--Coin Flip 0.8.0
 
 function setup()
     
@@ -75,7 +75,11 @@ function flip()
         
     end
     
-    sound(SOUND_HIT, math.random(31000,32000))
+    if flipAmount > 1 then
+    
+        sound(SOUND_HIT, math.random(31000,32000))
+    
+    end
     
 end
 
